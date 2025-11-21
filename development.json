@@ -1,0 +1,858 @@
+{
+  "project": {
+    "name": "Mindly — Asisten Kesehatan Mental",
+    "document_version": "1.0",
+    "prepared_by": "Arsitek Perangkat Lunak & Penulis Teknis",
+    "platform": "Web Application (Laravel)"
+  },
+
+  "product_overview": {
+    "description": "Mindly adalah aplikasi web yang berfungsi sebagai asisten digital harian untuk kesehatan mental. Mindly menyediakan ruang terstruktur dan aman bagi pengguna untuk memantau, mencatat, dan merefleksikan keadaan emosi mereka dari waktu ke waktu.",
+    "main_goals": [
+      {
+        "id": "self_awareness",
+        "title": "Memfasilitasi Kesadaran Diri",
+        "detail": "Membantu pengguna mengidentifikasi pola emosi dan pemicu suasana hati melalui pencatatan harian yang konsisten."
+      },
+      {
+        "id": "structured_data",
+        "title": "Menyediakan Data Terstruktur",
+        "detail": "Mengubah pengalaman emosional yang abstrak menjadi data terstruktur yang dapat dianalisis (Mood Journey)."
+      },
+      {
+        "id": "self_service_tools",
+        "title": "Menyediakan Layanan Mandiri",
+        "detail": "Memberikan alat pemeriksaan mandiri awal sebagai langkah preventif dan edukasi menuju kesehatan mental."
+      },
+      {
+        "id": "early_intervention",
+        "title": "Mendukung Intervensi Dini",
+        "detail": "Memberikan wawasan yang dapat dimanfaatkan pengguna saat mencari bantuan profesional, didukung oleh riwayat emosional mereka."
+      }
+    ],
+    "target_users": {
+      "age_range": "18–35",
+      "segments": [
+        {
+          "id": "professionals_students",
+          "name": "Profesional / Pelajar",
+          "description": "Mengalami stres tinggi dan membutuhkan alat untuk mengelola kecemasan harian dan burnout."
+        },
+        {
+          "id": "mental_health_beginners",
+          "name": "Pemula Kesehatan Mental",
+          "description": "Baru memulai perjalanan self-care dan membutuhkan panduan yang mudah digunakan untuk pemantauan emosional."
+        },
+        {
+          "id": "tech_enthusiasts",
+          "name": "Penggemar Teknologi",
+          "description": "Menghargai desain UI/UX modern, intuitif, dan bersih (estetika iOS/Notion)."
+        }
+      ]
+    },
+    "solution_pillars": [
+      {
+        "id": "daily_mood",
+        "title": "Pencatatan Cepat (Daily Mood)",
+        "description": "Mekanisme cepat untuk mencatat emosi saat ini dalam hitungan detik."
+      },
+      {
+        "id": "mood_journal",
+        "title": "Refleksi Mendalam (Mood Journal)",
+        "description": "Ruang pribadi dan aman untuk merinci peristiwa dan pemicu emosional."
+      },
+      {
+        "id": "self_check",
+        "title": "Penilaian (Self-Check Test)",
+        "description": "Tes singkat berbasis instrumen standar (mis. adaptasi sederhana DASS-21) untuk memberikan gambaran awal status mental."
+      }
+    ],
+    "value_proposition": [
+      {
+        "id": "personalized_insights",
+        "title": "Wawasan yang Dipersonalisasi",
+        "description": "Visualisasi tren suasana hati dari waktu ke waktu untuk mengenali pola dan pemicu unik pengguna."
+      },
+      {
+        "id": "accessibility_security",
+        "title": "Aksesibilitas & Keamanan",
+        "description": "Aplikasi web mudah diakses dengan komitmen pada kerahasiaan data dan enkripsi standar industri."
+      },
+      {
+        "id": "preventive_education",
+        "title": "Edukasi Preventif",
+        "description": "Konten edukasi terintegrasi dalam hasil Self-Check untuk meningkatkan literasi kesehatan mental."
+      },
+      {
+        "id": "great_ux",
+        "title": "Pengalaman Pengguna Unggul",
+        "description": "Desain menenangkan, minimalis, dan modern yang mengurangi friksi dalam proses pencatatan diri."
+      }
+    ]
+  },
+
+  "landing_page": {
+    "visual_style": "Glassmorphism iOS dengan latar belakang gradien biru yang menenangkan.",
+    "sections": {
+      "hero": {
+        "background": "Gradien biru laut lembut",
+        "tagline": "Penyembuhan Dimulai Di Sini.",
+        "headline": "Mindly: Suaka Digital untuk Perjalanan Emosional Anda.",
+        "subheadline": "Lacak, pahami, dan kuasai pola emosional harian Anda dengan antarmuka yang intuitif dan aman. Jadikan refleksi diri sebagai kebiasaan yang memberdayakan.",
+        "ctas": [
+          {
+            "id": "primary",
+            "label": "Mulai Sekarang",
+            "behavior": "Navigasi ke Login / Daftar",
+            "style": "Tombol primer dengan gradien biru"
+          },
+          {
+            "id": "secondary",
+            "label": "Pelajari Lebih Lanjut",
+            "behavior": "Scroll ke bagian penjelasan fitur",
+            "style": "Outline / transparan"
+          }
+        ],
+        "container_style": "Kartu glassmorphism dengan backdrop blur, border tipis transparan, dan bayangan lembut.",
+        "animations": {
+          "on_load": "Fade-in + slide-up seluruh konten hero",
+          "on_scroll": "AOS digunakan untuk efek fade/zoom pada mockup perangkat dan elemen lainnya"
+        }
+      },
+      "feature_highlights": {
+        "description": "Bagian yang menampilkan fitur inti dengan mockup perangkat (ponsel/tablet) bergaya glassmorphism.",
+        "items": [
+          {
+            "id": "daily_mood",
+            "title": "Daily Mood",
+            "ui_preview": "Popup cepat dengan lima emoji besar untuk skala emosional.",
+            "description": "Hanya butuh 5 detik. Catat perasaan Anda kapan saja, di mana saja, untuk rekaman instan."
+          },
+          {
+            "id": "mood_journey",
+            "title": "Mood Journey",
+            "ui_preview": "Grafik garis elegan gradien biru untuk tren emosional bulanan.",
+            "description": "Lihat pola Anda. Visualisasi data emosional yang bersih dan mudah diinterpretasikan."
+          },
+          {
+            "id": "self_check",
+            "title": "Self-Check Test",
+            "ui_preview": "Kartu dengan tombol mulai tes dan fokus privasi.",
+            "description": "Pahami kondisi Anda lebih dalam. Pemeriksaan kesehatan mental yang sederhana dan andal untuk wawasan awal."
+          },
+          {
+            "id": "user_profile",
+            "title": "Profil Pengguna",
+            "ui_preview": "Halaman pengaturan yang minimalis dan bersih.",
+            "description": "Data Anda, kedaulatan Anda. Pengaturan privasi dan personalisasi yang mudah diakses."
+          },
+          {
+            "id": "admin_panel",
+            "title": "Panel Admin (Opsional)",
+            "ui_preview": "Hanya ditampilkan dalam konteks demo / dokumentasi.",
+            "description": "Pemantauan integritas sistem dan statistik pengguna agregat (data anonim)."
+          }
+        ]
+      },
+      "why_mindly": {
+        "layout": "Kartu tiga kolom dengan gaya soft neumorphism.",
+        "content": {
+          "usage_reasons": [
+            "Mengurangi beban kognitif harian.",
+            "Memfasilitasi refleksi diri yang terstruktur.",
+            "Membantu mengenali pola dan pemicu emosional."
+          ],
+          "micro_education": "Kartu kecil berisi fakta singkat tentang pentingnya mood tracking dan journaling, dapat di-load dinamis.",
+          "special_benefits": [
+            "Desain menenangkan dan ergonomis.",
+            "Perawatan diri berbasis data, bukan sekadar buku harian teks.",
+            "Anonimitas dan enkripsi data dijaga dengan ketat."
+          ]
+        }
+      },
+      "how_it_works": {
+        "description": "Menjelaskan alur pengguna baru sampai menjadi pengguna reguler, secara visual (mis. diagram SVG).",
+        "steps": [
+          {
+            "step": 1,
+            "title": "Daftar & Masuk",
+            "detail": "Pengguna mendaftar dengan email atau masuk ke akun yang sudah ada.",
+            "cta": "Daftar Sekarang"
+          },
+          {
+            "step": 2,
+            "title": "Check-In Awal (Daily Mood)",
+            "detail": "Setelah masuk, pengguna diarahkan ke pop-up Daily Mood pertama."
+          },
+          {
+            "step": 3,
+            "title": "Refleksi Lewat Mood Journal",
+            "detail": "Jika mood netral/negatif, pengguna dianjurkan menulis jurnal untuk menjelaskan detail."
+          },
+          {
+            "step": 4,
+            "title": "Tinjauan Mingguan (Mood Journey)",
+            "detail": "Setelah 7 hari, sistem menampilkan ringkasan grafik dan insight mingguan."
+          },
+          {
+            "step": 5,
+            "title": "Self-Check Berkala",
+            "detail": "Pengguna dianjurkan mengambil Self-Check setiap bulan."
+          }
+        ]
+      },
+      "footer": {
+        "background": "Gradien biru tua",
+        "copyright": "© [Tahun Saat Ini] Mindly. Semua hak dilindungi undang-undang.",
+        "links": {
+          "product": [
+            "Daily Mood",
+            "Mood Journal",
+            "Self-Check"
+          ],
+          "company": [
+            "Tentang Kami",
+            "Kontak",
+            "Kebijakan Privasi",
+            "Ketentuan Layanan"
+          ]
+        },
+        "cta": {
+          "text": "Siap memulai perjalanan refleksi Anda?",
+          "button_label": "Daftar Gratis"
+        }
+      }
+    }
+  },
+
+  "features": {
+    "areas": [
+      "User Dashboard",
+      "Admin Panel"
+    ],
+    "daily_mood": {
+      "mechanism": {
+        "mood_scale": {
+          "type": "integer",
+          "range": "1–5",
+          "labels": {
+            "1": "Buruk",
+            "2": "Sedih",
+            "3": "Netral",
+            "4": "Baik",
+            "5": "Sangat Baik"
+          }
+        },
+        "trigger_tag": [
+          "Pekerjaan",
+          "Keluarga",
+          "Kesehatan",
+          "Sosial",
+          "Keuangan",
+          "Lainnya"
+        ],
+        "constraints": "Satu entri per hari per pengguna berdasarkan tanggal (log_date)."
+      },
+      "ui_ux": {
+        "presentation": "Modal overlay minimalis di tengah layar.",
+        "style": "Kartu glassmorphism dengan emoji besar dan efek hover halus.",
+        "after_submit_behavior": [
+          "Tutup modal dan tampilkan notifikasi sukses.",
+          "Opsional: Tawarkan link ke Mood Journey atau tulis jurnal."
+        ]
+      },
+      "system_behavior": {
+        "data_recorded": [
+          "user_id",
+          "mood_level",
+          "trigger_tag (opsional)",
+          "log_date (DATE)",
+          "timestamp created_at / updated_at"
+        ],
+        "rules": [
+          "Jika entri untuk tanggal tertentu sudah ada, update atau tolak (tergantung kebijakan)."
+        ]
+      },
+      "technology": {
+        "frontend": [
+          "Blade Template",
+          "Bootstrap 5",
+          "jQuery (AJAX untuk submit cepat)"
+        ],
+        "backend": [
+          "Laravel Controller",
+          "Form Request Validation",
+          "Eloquent Model daily_mood"
+        ]
+      }
+    },
+    "mood_journey": {
+      "mechanism": {
+        "description": "Pengguna menulis jurnal yang merinci perasaan, peristiwa, dan refleksi. Jurnal bisa ditautkan ke entri Daily Mood sesuai tanggal.",
+        "actions": [
+          "create",
+          "read",
+          "update",
+          "delete"
+        ]
+      },
+      "ui_ux": {
+        "editor": "Textarea dengan auto-resize (atau rich text sederhana).",
+        "list_view": "Kartu minimalis dengan judul (opsional), cuplikan konten, dan indikator warna berdasarkan mood.",
+        "filters": [
+          "Filter berdasarkan rentang tanggal",
+          "Filter berdasarkan mood_level terkait"
+        ]
+      },
+      "system_behavior": {
+        "relations": [
+          "mood_journals.user_id → users.id",
+          "mood_journals.daily_mood_id → daily_moods.id (opsional)"
+        ],
+        "data": [
+          "title (opsional)",
+          "content (wajib)",
+          "journal_date",
+          "daily_mood_id (nullable)"
+        ]
+      },
+      "technology": {
+        "frontend": "Blade Template, Bootstrap 5",
+        "backend": "Laravel Eloquent CRUD, MySQL/MariaDB (TEXT column)",
+        "security": "Policy untuk memastikan hanya pemilik yang dapat melihat/mengubah jurnal."
+      }
+    },
+    "self_check": {
+      "mechanism": {
+        "type": "Skala Likert 1–4 atau 1–3 untuk setiap pertanyaan.",
+        "flow": [
+          "Form multi-step",
+          "Pengguna menjawab semua pertanyaan",
+          "Skor total dihitung",
+          "Kategori hasil ditentukan (Normal, Ringan, Sedang, Parah)",
+          "Rekomendasi edukasi ditampilkan"
+        ]
+      },
+      "ui_ux": {
+        "layout": "Form multi-step dengan progress bar / indikator langkah.",
+        "navigation": "Tombol Berikutnya / Kembali, tombol Kirim di langkah terakhir.",
+        "result_page": "Menampilkan skor, kategori, penjelasan singkat, dan edukasi tambahan.",
+        "feedback": "SweetAlert2 untuk konfirmasi submit & error input."
+      },
+      "system_behavior": {
+        "storage": [
+          "user_id",
+          "score",
+          "category",
+          "recommendation_content",
+          "test_date",
+          "raw_answers (JSON, bisa terenkripsi)"
+        ],
+        "rules": [
+          "Semua pertanyaan wajib diisi.",
+          "Hasil tidak dapat diedit, hanya bisa tes ulang.",
+          "Instrumen hanya untuk screening, bukan diagnosis klinis."
+        ]
+      },
+      "technology": {
+        "validation": "Laravel Validation untuk memastikan semua item terisi.",
+        "backend_logic": "Service/Action class untuk perhitungan skor dan kategori.",
+        "database": "MySQL/MariaDB (SMALLINT untuk score, TEXT/JSON untuk rekomendasi & jawaban)."
+      }
+    },
+    "user_profile": {
+      "mechanism": {
+        "sections": [
+          "Informasi Dasar (nama, email)",
+          "Keamanan (ubah kata sandi)",
+          "Preferensi (mode tema, pengingat, dsb.)"
+        ]
+      },
+      "ui_ux": {
+        "layout": "Halaman pengaturan dengan tab atau section terpisah.",
+        "controls": [
+          "Input teks",
+          "Email (read-only atau editable)",
+          "Toggle mode gelap/terang",
+          "Form perubahan password (old_password, new_password, confirm_password)"
+        ]
+      },
+      "system_behavior": {
+        "updates": [
+          "Update kolom name, email (dengan validasi unik).",
+          "Update password dengan verifikasi password lama.",
+          "Update theme_preference dan setting lain."
+        ]
+      },
+      "technology": {
+        "auth": "Laravel default auth (Sanctum / session-based).",
+        "security": "Hash::check untuk verifikasi password lama, Hash::make untuk password baru."
+      }
+    },
+    "auth": {
+      "login_register": {
+        "mechanism": {
+          "fields_register": [
+            "name",
+            "email",
+            "password",
+            "password_confirmation"
+          ],
+          "fields_login": [
+            "email",
+            "password"
+          ]
+        },
+        "ui_ux": {
+          "style": "Kartu glassmorphism terpusat, minimalis.",
+          "inputs": "Border lembut, fokus biru ala iOS.",
+          "feedback": "Validasi error ditampilkan di bawah input dengan pesan yang jelas."
+        }
+      }
+    },
+    "user_dashboard": {
+      "layout": "Grid responsif dengan beberapa kartu ringkasan.",
+      "cards": [
+        {
+          "id": "greeting",
+          "title": "Salam Pengguna",
+          "content": "Halo, [Nama Pengguna]!"
+        },
+        {
+          "id": "today_mood",
+          "title": "Ringkasan Mood Hari Ini",
+          "cta": "Catat Mood",
+          "data": "Menampilkan mood hari ini jika sudah tercatat."
+        },
+        {
+          "id": "latest_journal",
+          "title": "Jurnal Terbaru",
+          "cta": "Tulis Jurnal",
+          "data": "Cuplikan entri jurnal terakhir."
+        },
+        {
+          "id": "weekly_insight",
+          "title": "Wawasan Minggu Ini",
+          "cta": "Lihat Perjalanan Penuh",
+          "data": "Mini-chart mood 7 hari terakhir."
+        },
+        {
+          "id": "self_check_reminder",
+          "title": "Self-Check",
+          "cta": "Ambil Tes",
+          "data": "Pengingat jika sudah saatnya tes ulang."
+        }
+      ],
+      "technology": {
+        "frontend": "Blade + Bootstrap 5",
+        "backend": "DashboardController memuat rangkuman (query ke daily_moods, mood_journals, selfcheck_results)."
+      }
+    },
+    "theme_mode": {
+      "description": "Mode gelap/terang opsional.",
+      "behavior": {
+        "storage": [
+          "localStorage (browser)",
+          "Kolom theme_preference pada tabel users (opsional)"
+        ],
+        "css": "Kelas .dark-mode pada <body> atau data-theme=\"dark\" pada <html>."
+      }
+    },
+    "admin_panel": {
+      "access": "Hanya role 'admin'.",
+      "data_views": {
+        "user_data": {
+          "description": "Jumlah total pengguna, pengguna aktif 30 hari terakhir.",
+          "privacy": "Nama/email dianonimkan atau hanya terlihat untuk admin tingkat tertentu."
+        },
+        "daily_moods": {
+          "description": "Distribusi global mood (contoh: 30% Sedih, 50% Baik)."
+        },
+        "mood_journals": {
+          "description": "Jumlah total jurnal dan panjang rata-rata.",
+          "restriction": "Konten jurnal TIDAK dapat diakses secara langsung."
+        },
+        "self_check_results": {
+          "description": "Distribusi kategori hasil (Normal, Ringan, Sedang, Parah)."
+        },
+        "statistics": {
+          "graphs": [
+            "Tren pendaftaran pengguna",
+            "Tren penggunaan harian",
+            "Korelasi umum mood_level dan trigger_tag"
+          ]
+        }
+      }
+    }
+  },
+
+  "database_schema": {
+    "tables": {
+      "users": {
+        "description": "Menyimpan data akun pengguna.",
+        "columns": [
+          { "name": "id", "type": "BIGINT", "attributes": ["PK", "AUTO_INCREMENT"] },
+          { "name": "name", "type": "VARCHAR(255)", "attributes": ["NOT_NULL"] },
+          { "name": "email", "type": "VARCHAR(255)", "attributes": ["NOT_NULL", "UNIQUE"] },
+          { "name": "password", "type": "VARCHAR(255)", "attributes": ["NOT_NULL"] },
+          { "name": "role", "type": "ENUM('user','admin')", "default": "user" },
+          { "name": "theme_preference", "type": "ENUM('light','dark')", "default": "light" },
+          { "name": "email_verified_at", "type": "TIMESTAMP", "attributes": ["NULLABLE"] },
+          { "name": "remember_token", "type": "VARCHAR(100)", "attributes": ["NULLABLE"] },
+          { "name": "created_at", "type": "TIMESTAMP", "attributes": ["NOT_NULL"] },
+          { "name": "updated_at", "type": "TIMESTAMP", "attributes": ["NOT_NULL"] }
+        ],
+        "indexes": [
+          "PRIMARY KEY (id)",
+          "UNIQUE KEY (email)"
+        ]
+      },
+      "daily_moods": {
+        "description": "Menyimpan mood harian pengguna.",
+        "columns": [
+          { "name": "id", "type": "BIGINT", "attributes": ["PK", "AUTO_INCREMENT"] },
+          { "name": "user_id", "type": "BIGINT", "attributes": ["FK users.id"] },
+          { "name": "mood_level", "type": "TINYINT", "attributes": ["NOT_NULL", "1-5"] },
+          { "name": "trigger_tag", "type": "VARCHAR(100)", "attributes": ["NULLABLE"] },
+          { "name": "log_date", "type": "DATE", "attributes": ["NOT_NULL"] },
+          { "name": "created_at", "type": "TIMESTAMP", "attributes": ["NOT_NULL"] },
+          { "name": "updated_at", "type": "TIMESTAMP", "attributes": ["NOT_NULL"] }
+        ],
+        "constraints": [
+          "FOREIGN KEY (user_id) REFERENCES users(id)",
+          "UNIQUE KEY unique_user_date (user_id, log_date)"
+        ],
+        "indexes": [
+          "INDEX idx_user_date (user_id, log_date)"
+        ]
+      },
+      "mood_journals": {
+        "description": "Menyimpan entri jurnal pengguna.",
+        "columns": [
+          { "name": "id", "type": "BIGINT", "attributes": ["PK", "AUTO_INCREMENT"] },
+          { "name": "user_id", "type": "BIGINT", "attributes": ["FK users.id"] },
+          { "name": "daily_mood_id", "type": "BIGINT", "attributes": ["FK daily_moods.id", "NULLABLE"] },
+          { "name": "title", "type": "VARCHAR(255)", "attributes": ["NULLABLE"] },
+          { "name": "content", "type": "TEXT", "attributes": ["NOT_NULL", "POTENSI_ENKRIPSI"] },
+          { "name": "journal_date", "type": "DATE", "attributes": ["NOT_NULL"] },
+          { "name": "created_at", "type": "TIMESTAMP", "attributes": ["NOT_NULL"] },
+          { "name": "updated_at", "type": "TIMESTAMP", "attributes": ["NOT_NULL"] },
+          { "name": "deleted_at", "type": "TIMESTAMP", "attributes": ["NULLABLE", "soft_delete_opsional"] }
+        ],
+        "constraints": [
+          "FOREIGN KEY (user_id) REFERENCES users(id)",
+          "FOREIGN KEY (daily_mood_id) REFERENCES daily_moods(id)"
+        ],
+        "indexes": [
+          "INDEX idx_user (user_id)",
+          "INDEX idx_date (journal_date)",
+          "INDEX idx_daily_mood (daily_mood_id)"
+        ]
+      },
+      "selfcheck_results": {
+        "description": "Menyimpan hasil tes Self-Check pengguna.",
+        "columns": [
+          { "name": "id", "type": "BIGINT", "attributes": ["PK", "AUTO_INCREMENT"] },
+          { "name": "user_id", "type": "BIGINT", "attributes": ["FK users.id"] },
+          { "name": "score", "type": "SMALLINT", "attributes": ["NOT_NULL"] },
+          { "name": "category", "type": "VARCHAR(50)", "attributes": ["NOT_NULL"] },
+          { "name": "recommendation_content", "type": "TEXT", "attributes": ["NOT_NULL"] },
+          { "name": "test_date", "type": "TIMESTAMP", "attributes": ["NOT_NULL"] },
+          { "name": "raw_answers", "type": "JSON", "attributes": ["NULLABLE", "POTENSI_ENKRIPSI"] },
+          { "name": "created_at", "type": "TIMESTAMP", "attributes": ["NOT_NULL"] },
+          { "name": "updated_at", "type": "TIMESTAMP", "attributes": ["NOT_NULL"] },
+          { "name": "deleted_at", "type": "TIMESTAMP", "attributes": ["NULLABLE", "soft_delete_opsional"] }
+        ],
+        "constraints": [
+          "FOREIGN KEY (user_id) REFERENCES users(id)"
+        ],
+        "indexes": [
+          "INDEX idx_user (user_id)",
+          "INDEX idx_date (test_date)",
+          "INDEX idx_category (category)"
+        ]
+      },
+      "activity_logs": {
+        "description": "Mencatat aktivitas penting pengguna & sistem.",
+        "columns": [
+          { "name": "id", "type": "BIGINT", "attributes": ["PK", "AUTO_INCREMENT"] },
+          { "name": "user_id", "type": "BIGINT", "attributes": ["FK users.id", "NULLABLE"] },
+          { "name": "activity_type", "type": "VARCHAR(100)", "attributes": ["NOT_NULL"] },
+          { "name": "description", "type": "TEXT", "attributes": ["NOT_NULL"] },
+          { "name": "ip_address", "type": "VARCHAR(45)", "attributes": ["NULLABLE"] },
+          { "name": "created_at", "type": "TIMESTAMP", "attributes": ["NOT_NULL"] }
+        ],
+        "constraints": [
+          "FOREIGN KEY (user_id) REFERENCES users(id)"
+        ],
+        "indexes": [
+          "INDEX idx_user (user_id)",
+          "INDEX idx_type (activity_type)"
+        ]
+      },
+      "user_preferences": {
+        "description": "Opsional – menyimpan preferensi tambahan pengguna.",
+        "optional": true,
+        "columns": [
+          { "name": "id", "type": "BIGINT", "attributes": ["PK", "AUTO_INCREMENT"] },
+          { "name": "user_id", "type": "BIGINT", "attributes": ["FK users.id"] },
+          { "name": "receive_email_reminder", "type": "BOOLEAN", "default": false },
+          { "name": "allow_data_for_research", "type": "BOOLEAN", "default": false },
+          { "name": "default_reminder_time", "type": "TIME", "attributes": ["NULLABLE"] },
+          { "name": "created_at", "type": "TIMESTAMP", "attributes": ["NOT_NULL"] },
+          { "name": "updated_at", "type": "TIMESTAMP", "attributes": ["NOT_NULL"] }
+        ],
+        "indexes": [
+          "UNIQUE KEY unique_user (user_id)"
+        ]
+      }
+    }
+  },
+
+  "erd": {
+    "entities": [
+      "users",
+      "daily_moods",
+      "mood_journals",
+      "selfcheck_results",
+      "activity_logs",
+      "user_preferences (opsional)"
+    ],
+    "relationships": [
+      {
+        "from": "users",
+        "to": "daily_moods",
+        "type": "1-to-many",
+        "description": "Setiap user dapat memiliki banyak daily_moods."
+      },
+      {
+        "from": "users",
+        "to": "mood_journals",
+        "type": "1-to-many",
+        "description": "Setiap user dapat memiliki banyak entri jurnal."
+      },
+      {
+        "from": "users",
+        "to": "selfcheck_results",
+        "type": "1-to-many",
+        "description": "Setiap user dapat memiliki banyak hasil tes Self-Check."
+      },
+      {
+        "from": "daily_moods",
+        "to": "mood_journals",
+        "type": "1-to-optional-many",
+        "description": "Satu daily_mood bisa ditautkan ke banyak mood_journals (opsional)."
+      },
+      {
+        "from": "users",
+        "to": "activity_logs",
+        "type": "1-to-many",
+        "description": "Log aktivitas disimpan per pengguna (atau null untuk aktivitas sistem)."
+      },
+      {
+        "from": "users",
+        "to": "user_preferences",
+        "type": "1-to-1",
+        "description": "Setiap user dapat memiliki satu record preferensi."
+      }
+    ],
+    "authorization": {
+      "role_field": "users.role",
+      "roles": {
+        "user": "Mengakses data pribadi sendiri (mood, jurnal, hasil tes).",
+        "admin": "Mengakses data agregat & statistik, bukan konten detail jurnal."
+      }
+    }
+  },
+
+  "auth_and_session_flow": {
+    "registration": {
+      "steps": [
+        "Pengguna mengisi name, email, password, password_confirmation.",
+        "Validasi: email unik, password minimal 8 karakter dan cocok dengan konfirmasi.",
+        "Password di-hash dengan bcrypt (Hash::make).",
+        "Record user baru dibuat dengan role 'user'.",
+        "Mencatat activity_logs dengan activity_type='Daftar'.",
+        "User otomatis login dan diarahkan ke dashboard."
+      ]
+    },
+    "login": {
+      "steps": [
+        "Pengguna mengirim email & password.",
+        "Sistem mencari user berdasarkan email.",
+        "Password diverifikasi dengan Hash::check.",
+        "Jika valid, Laravel membuat session dan menyimpan ID user.",
+        "Session ID disimpan di cookie terenkripsi (laravel_session).",
+        "Mencatat activity_logs dengan activity_type='Masuk Berhasil'.",
+        "Jika gagal, log 'Masuk Gagal' (opsional) dan throttle diterapkan."
+      ]
+    },
+    "admin_role_verification": {
+      "mechanism": [
+        "Middleware IsAdmin mengecek Auth::user()->role === 'admin'.",
+        "Jika bukan admin, redirect ke dashboard atau halaman 403."
+      ]
+    },
+    "middlewares": {
+      "auth": "Melindungi rute yang memerlukan login.",
+      "throttle": "Membatasi percobaan login/daftar agar tidak diserang brute force.",
+      "is_admin": "Membatasi akses ke rute /admin/* hanya untuk role admin."
+    }
+  },
+
+  "user_flow": {
+    "new_user_flow": [
+      "Pengguna mengunjungi Landing Page dan membaca penjelasan Mindly.",
+      "Pengguna tertarik dengan proposisi nilai dan klik CTA 'Mulai Sekarang'.",
+      "Pengguna diarahkan ke halaman daftar lalu mengisi data.",
+      "Setelah sukses daftar, user otomatis login dan masuk ke dashboard.",
+      "Pada kunjungan pertama, muncul modal Daily Mood pertama.",
+      "User memilih mood dan trigger_tag.",
+      "Jika mood negatif/netral, sistem menawarkan untuk menulis jurnal.",
+      "User menulis entri jurnal (opsional) yang ditautkan ke daily_mood hari itu.",
+      "User kembali ke dashboard dan mulai membiasakan catat mood harian.",
+      "Setelah 7 hari, Kartu Wawasan Minggu Ini menampilkan grafik tren pertama.",
+      "User dapat membuka Mood Journey untuk melihat pola dan korelasi dengan jurnal.",
+      "Setelah beberapa minggu, sistem mengingatkan untuk mengambil Self-Check.",
+      "User mengisi Self-Check, melihat kategori hasil dan rekomendasi edukasi.",
+      "User melanjutkan rutinitas check-in mood, jurnal, dan Self-Check berkala."
+    ]
+  },
+
+  "ui_ux_style": {
+    "core_style": {
+      "theme": "Glassmorphism iOS",
+      "background": "Gradien biru lembut sebagai latar belakang utama.",
+      "cards": "Kaca es buram putih dengan opacity 70–80%, backdrop-filter: blur(10px).",
+      "borders": "Garis tipis (1px) dengan rgba(255,255,255,0.3).",
+      "shadows": "Soft neumorphism, bayangan lembut dan menyebar.",
+      "radius": "Radius 20–30px untuk kartu, modal, dan tombol."
+    },
+    "color_system": {
+      "primary_gradient": "#A1C4FD → #C2E9FB (contoh)",
+      "states": {
+        "success": "Versi hijau lembut",
+        "warning": "Kuning lembut",
+        "error": "Merah yang tidak terlalu keras"
+      }
+    },
+    "animations": {
+      "scroll_animation": "AOS (Animate On Scroll) untuk efek fade, slide, dan zoom ringan.",
+      "transitions": "Transition 0.3s ease-in-out untuk hover tombol, kartu, dan perubahan tema."
+    },
+    "alerts": {
+      "library": "SweetAlert2",
+      "policy": "alert() native JavaScript tidak digunakan.",
+      "usage": [
+        "Konfirmasi hapus entri jurnal.",
+        "Notifikasi sukses simpan data.",
+        "Peringatan hasil Self-Check tertentu (dengan disclaimer)."
+      ]
+    },
+    "icons": {
+      "package": "Bootstrap Icons",
+      "usage": "Untuk ikon-ikon UI dasar yang bersih dan minimalis."
+    }
+  },
+
+  "technical_specs": {
+    "backend_framework": "Laravel 10/11/12 (LTS terbaru)",
+    "frontend_framework": "Bootstrap 5 (CDN)",
+    "javascript_libraries": [
+      "jQuery (untuk AJAX dan manipulasi DOM sederhana)",
+      "AOS (Animate On Scroll)",
+      "SweetAlert2",
+      "Alpine.js (opsional untuk interaktivitas ringan)"
+    ],
+    "templating_engine": "Blade",
+    "database": "MySQL / MariaDB",
+    "authentication": "Laravel built-in auth (session-based) atau Sanctum untuk API masa depan.",
+    "password_hashing": "bcrypt (Hash::make / Hash::check)",
+    "security": {
+      "https": "Wajib di production.",
+      "csrf": "CSRF protection Laravel untuk semua form.",
+      "cookies": [
+        "HttpOnly",
+        "Secure",
+        "SameSite=Lax atau Strict"
+      ],
+      "data_encryption_suggested": [
+        "mood_journals.content",
+        "selfcheck_results.raw_answers"
+      ]
+    }
+  },
+
+  "enhancements_and_recommendations": {
+    "onboarding": {
+      "goals": "Membuat pengguna merasa diarahkan dan dipersonalisasi sejak awal.",
+      "steps": [
+        "Tanyakan tujuan utama user (mengelola stres kerja, tidur lebih baik, dsb.).",
+        "Tanyakan preferensi frekuensi pengingat (harian/mingguan/tidak sama sekali).",
+        "Simpan ke user_preferences dan tampilkan di dashboard sebagai fokus utama."
+      ]
+    },
+    "habit_and_reminders": {
+      "reminder_types": [
+        "Banner lembut di dashboard jika user tidak mencatat mood beberapa hari.",
+        "Email reminder (opsional, user harus opt-in)."
+      ],
+      "metrics": [
+        "Hari aktif mencatat mood per minggu.",
+        "Jumlah hari berturut-turut (streak non-menghukum)."
+      ],
+      "principle": "Hindari gamifikasi yang menimbulkan rasa bersalah. Tekankan apresiasi, bukan hukuman."
+    },
+    "ethics_and_mental_health_safety": {
+      "disclaimer": {
+        "places": [
+          "Landing Page",
+          "Halaman Self-Check",
+          "Halaman hasil Self-Check",
+          "Footer"
+        ],
+        "messages": [
+          "Mindly bukan pengganti psikolog/psikiater.",
+          "Self-Check hanya screening awal, bukan diagnosis klinis.",
+          "Pengguna dianjurkan mencari bantuan profesional jika merasa membutuhkan."
+        ]
+      },
+      "crisis_handling": {
+        "behavior": "Jika hasil Self-Check berat atau mood sering sangat rendah, tampilkan pesan agar pengguna segera menghubungi layanan darurat/profesional kesehatan mental.",
+        "links": "Opsional – link ke hotline atau resource resmi (bila tersedia)."
+      }
+    },
+    "architecture_recommendations": {
+      "controllers": [
+        "LandingController",
+        "DashboardController",
+        "DailyMoodController",
+        "MoodJournalController",
+        "SelfCheckController",
+        "ProfileController",
+        "Admin\\DashboardController",
+        "Admin\\StatsController"
+      ],
+      "services_actions": [
+        "RecordDailyMoodAction",
+        "GenerateSelfCheckResultAction",
+        "WeeklyMoodSummaryService"
+      ],
+      "policies": [
+        "MoodJournalPolicy (view, update, delete hanya pemilik)",
+        "SelfCheckResultPolicy (view hanya pemilik)"
+      ]
+    },
+    "database_improvement_notes": {
+      "indexes": "Tambahkan index pada kolom yang sering difilter: user_id, tanggal, category.",
+      "soft_delete": "Gunakan softDeletes untuk jurnal & hasil tes jika ingin menghapus secara logis.",
+      "encryption": "Gunakan cast encrypted:string atau encrypted:array di model untuk data sensitif."
+    },
+    "future_directions": {
+      "api_for_mobile": "Expose endpoint dengan Laravel Sanctum untuk aplikasi mobile (Flutter/React Native).",
+      "data_export": "Fitur export data (CSV/JSON/PDF) agar user dapat mengunduh riwayat mereka.",
+      "multi_language": "Dukungan multi-bahasa (ID/EN) menggunakan sistem localization Laravel.",
+      "cms_for_education": "CMS kecil untuk mengelola konten edukasi dan rekomendasi Self-Check."
+    }
+  }
+}
