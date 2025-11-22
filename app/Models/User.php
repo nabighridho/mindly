@@ -24,7 +24,6 @@ class User extends Authenticatable
         'email',
         'password',
         'role',
-        'theme_preference',
     ];
 
     /**
@@ -55,9 +54,9 @@ class User extends Authenticatable
         return $this->hasMany(DailyMood::class);
     }
 
-    public function moodJournals(): HasMany
+    public function moodJourneys(): HasMany
     {
-        return $this->hasMany(MoodJournal::class);
+        return $this->hasMany(MoodJourney::class);
     }
 
     public function selfcheckResults(): HasMany

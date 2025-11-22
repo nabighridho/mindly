@@ -1,6 +1,6 @@
 # Mindly
 
-A Laravel-based mental wellbeing app with daily mood check-ins, mood journals, and self-check screening.
+ A Laravel-based mental wellbeing app with daily mood check-ins, mood journeys, and self-check screening.
 
 ## Requirements
 - PHP 8.2+
@@ -47,7 +47,7 @@ A Laravel-based mental wellbeing app with daily mood check-ins, mood journals, a
 
 ## Key features
 - Daily mood logging (one per day per user)
-- Mood journals linked to daily mood
+- Mood journeys linked to daily mood
 - Self-check with admin-managed questions and per-question answer storage
 - Admin dashboard for mood distribution, users, and self-check questions
 
@@ -55,3 +55,4 @@ A Laravel-based mental wellbeing app with daily mood check-ins, mood journals, a
 - ERD: `docs/erd.mmd`
 - Physical data model: `docs/pdm.mmd`
 - Flowchart: `docs/flowchart.mmd`
+- Requirements: PHP 8.2+, Composer, Node.js 18+, npm, MySQL/MariaDB

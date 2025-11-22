@@ -25,7 +25,6 @@ class DatabaseSeeder extends Seeder
             [
                 'name' => 'Test User',
                 'role' => 'user',
-                'theme_preference' => 'light',
                 // keep the factory default hashed password ("password")
                 'password' => bcrypt('password'),
                 'email_verified_at' => now(),

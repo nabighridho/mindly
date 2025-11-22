@@ -5,7 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DailyMoodController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LandingController;
-use App\Http\Controllers\MoodJournalController;
+use App\Http\Controllers\MoodJourneyController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SelfCheckController;
 use App\Http\Controllers\Admin\UserController as AdminUserController;
@@ -30,7 +30,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/daily-mood', [DailyMoodController::class, 'create'])->name('daily-mood.create');
     Route::post('/daily-mood', [DailyMoodController::class, 'store'])->name('daily-mood.store');
 
-    Route::resource('journals', MoodJournalController::class)->except('show');
+    Route::resource('journeys', MoodJourneyController::class)->except('show');
 
     Route::get('/self-check', [SelfCheckController::class, 'create'])->name('self-check.create');
     Route::post('/self-check', [SelfCheckController::class, 'store'])->name('self-check.store');
