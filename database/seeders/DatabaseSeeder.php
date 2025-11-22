@@ -17,9 +17,19 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        $this->call(AdminUserSeeder::class);
+        $this->call(SelfcheckQuestionSeeder::class);
+
+        User::updateOrCreate(
+            ['email' => 'test@example.com'],
+            [
+                'name' => 'Test User',
+                'role' => 'user',
+                'theme_preference' => 'light',
+                // keep the factory default hashed password ("password")
+                'password' => bcrypt('password'),
+                'email_verified_at' => now(),
+            ]
+        );
     }
 }
