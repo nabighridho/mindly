@@ -1,0 +1,99 @@
+```mermaid
+erDiagram
+    USER ||--|| USER_PREFERENCE : has_one
+    USER ||--o{ DAILY_MOOD : has_many
+    USER ||--o{ MOOD_JOURNEY : has_many
+    USER ||--o{ SELFCHECK_RESULT : has_many
+    USER ||--o{ ACTIVITY_LOG : has_many
+
+    DAILY_MOOD ||--o{ MOOD_JOURNAL : relates_to
+    SELFCHECK_RESULT ||--o{ SELFCHECK_ANSWER : has_many
+    SELFCHECK_QUESTION ||--o{ SELFCHECK_ANSWER : referenced
+
+    SELFCHECK_RESULT {
+        int id PK
+        bigint user_id FK
+        smallint score
+        string category
+        text recommendation_content
+        json raw_answers
+        datetime test_date
+        int question_version
+        datetime created_at
+        datetime updated_at
+        datetime deleted_at
+    }
+
+    SELFCHECK_QUESTION {
+        int id PK
+        string question
+        tinyint sort_order
+        int version
+        boolean is_active
+        datetime created_at
+        datetime updated_at
+    }
+
+    SELFCHECK_ANSWER {
+        int id PK
+        bigint selfcheck_result_id FK
+        bigint selfcheck_question_id FK
+        tinyint position
+        tinyint answer
+        string question_text_snapshot
+        datetime created_at
+        datetime updated_at
+    }
+
+    USER {
+        bigint id PK
+        string name
+        string email
+        enum role ["user","admin"]
+        timestamp email_verified_at
+        string password
+        remember_token
+        datetime created_at
+        datetime updated_at
+    }
+
+    USER_PREFERENCE {
+        bigint id PK
+        bigint user_id FK
+        boolean receive_email_reminder
+        boolean allow_data_for_research
+        time default_reminder_time
+        datetime created_at
+        datetime updated_at
+    }
+
+    DAILY_MOOD {
+        bigint id PK
+        bigint user_id FK
+        tinyint mood_level
+        string trigger_tag
+        date log_date
+        datetime created_at
+        datetime updated_at
+    }
+
+    MOOD_JOURNEY {
+        bigint id PK
+        bigint user_id FK
+        bigint daily_mood_id FK
+        date journal_date
+        string title
+        text content
+        datetime created_at
+        datetime updated_at
+    }
+
+    ACTIVITY_LOG {
+        bigint id PK
+        bigint user_id FK
+        string activity_type
+        text description
+        datetime created_at
+        datetime updated_at
+    }
+```

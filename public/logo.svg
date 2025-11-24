@@ -1,0 +1,11 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mindly logo">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#123a8c"/>
+      <stop offset="50%" stop-color="#1553b3"/>
+      <stop offset="100%" stop-color="#0c2b6f"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#grad)" d="M256 84c-97 0-176 71-176 158 0 60 36 112 93 141l-15 66c-2 9 7 16 16 12l88-40c94 10 176-54 176-143 0-87-79-158-182-158Z" />
+  <path fill="#48b7ff" d="M326 168c-21 0-38 17-38 38 0-21-17-38-38-38s-38 17-38 38c0 14 6 26 16 32l54 52 54-52c10-6 16-18 16-32 0-21-17-38-38-38Z"/>
+</svg>

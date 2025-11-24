@@ -1,0 +1,98 @@
+```mermaid
+erDiagram
+    USERS ||--|| USER_PREFERENCES : has_one
+    USERS ||--o{ DAILY_MOODS : has_many
+    USERS ||--o{ MOOD_JOURNEYS : has_many
+    USERS ||--o{ SELFCHECK_RESULTS : has_many
+    USERS ||--o{ ACTIVITY_LOGS : has_many
+    SELFCHECK_RESULTS ||--o{ SELFCHECK_ANSWERS : has_many
+    SELFCHECK_QUESTIONS ||--o{ SELFCHECK_ANSWERS : referenced
+    DAILY_MOODS ||--o{ MOOD_JOURNALS : relates_to
+
+    USERS {
+        bigint id PK
+        string name
+        string email
+        enum role
+        timestamp email_verified_at
+        string password
+        remember_token
+        datetime created_at
+        datetime updated_at
+    }
+
+    USER_PREFERENCES {
+        bigint id PK
+        bigint user_id FK
+        boolean receive_email_reminder
+        boolean allow_data_for_research
+        time default_reminder_time
+        datetime created_at
+        datetime updated_at
+    }
+
+    DAILY_MOODS {
+        bigint id PK
+        bigint user_id FK
+        tinyint mood_level
+        string trigger_tag
+        date log_date
+        datetime created_at
+        datetime updated_at
+    }
+
+    MOOD_JOURNEYS {
+        bigint id PK
+        bigint user_id FK
+        bigint daily_mood_id FK
+        date journal_date
+        string title
+        text content
+        datetime created_at
+        datetime updated_at
+    }
+
+    SELFCHECK_RESULTS {
+        bigint id PK
+        bigint user_id FK
+        smallint score
+        string category
+        text recommendation_content
+        json raw_answers
+        int question_version
+        datetime test_date
+        datetime created_at
+        datetime updated_at
+        datetime deleted_at
+    }
+
+    SELFCHECK_QUESTIONS {
+        int id PK
+        string question
+        tinyint sort_order
+        int version
+        boolean is_active
+        datetime created_at
+        datetime updated_at
+    }
+
+    SELFCHECK_ANSWERS {
+        bigint id PK
+        bigint selfcheck_result_id FK
+        bigint selfcheck_question_id FK
+        tinyint position
+        tinyint answer
+        string question_text_snapshot
+        datetime created_at
+        datetime updated_at
+    }
+
+    ACTIVITY_LOGS {
+        bigint id PK
+        bigint user_id FK
+        string activity_type
+        text description
+        datetime created_at
+        datetime updated_at
+    }
+```

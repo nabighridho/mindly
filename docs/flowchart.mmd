@@ -1,0 +1,23 @@
+```mermaid
+flowchart TD
+    A[Landing Page] -->|Registrasi| B[Register]
+    A -->|Login| C[Login]
+    B -->|Sukses| D[Dashboard]
+    C -->|Sukses| D
+
+    D -->|Catat mood| E[Daily Mood Form]
+    E -->|Simpan| D
+
+    D -->|Tulis jurnal| F[Journals Index]
+    F -->|Tambah| G[Create Journal]
+    G -->|Simpan| F
+
+    D -->|Ambil Self-Check| H[Self-Check Form]
+    H -->|Kirim| I[Self-Check Result]
+
+    subgraph Admin Area
+        D -->|Link Admin (role=admin)| J[Admin Dashboard]
+        J --> K[Kelola Pengguna]
+        J --> L[Kelola Pertanyaan Self-Check]
+    end
+```

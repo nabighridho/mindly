@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="M heart monogram" fill="none">
+  <defs>
+    <linearGradient id="grad" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#02142F"/>
+      <stop offset="100%" stop-color="#0A4FBF"/>
+    </linearGradient>
+  </defs>
+  <g fill="url(#grad)">
+    <path d="M256 436s-18-16-38-33C158 353 78 283 78 204 78 135 126 86 192 86c38 0 65 19 80 45 15-26 42-45 80-45 66 0 114 49 114 118 0 79-80 149-140 199-20 17-38 33-38 33Z"/>
+    <path d="M176 214c-8 0-14 6-14 14v136c0 8 6 14 14 14h28c7 0 13-3 16-9l36-68 36 68c3 6 9 9 16 9h28c8 0 14-6 14-14V228c0-8-6-14-14-14h-20c-6 0-11 3-14 8l-24 46-24-46c-3-5-8-8-14-8h-10c-6 0-11 3-14 8l-24 46-24-46c-3-5-8-8-14-8h-20Z"/>
+  </g>
+</svg>
