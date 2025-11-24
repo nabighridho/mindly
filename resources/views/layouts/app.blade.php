@@ -54,6 +54,7 @@
             font-size: 0.85rem;
             background: linear-gradient(90deg, #000000, #1034a6, #000080, #191970, #4169e1, #000000);
             background-size: 350% 350%;
+            background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
             animation: brandShift 9s ease-in-out infinite;
@@ -614,6 +615,15 @@
             box-shadow: 0 10px 20px rgba(2, 20, 47, 0.12);
         }
 
+        .admin-progress {
+            width: var(--bar-width, 0%);
+            background: linear-gradient(120deg, #0f3c8c, #2f6bce);
+        }
+
+        .admin-progress-dark {
+            width: var(--bar-width, 0%);
+        }
+
         .label-animated {
             background: linear-gradient(90deg, #000000, #1034a6, #000080, #191970, #4169e1, #000000);
             background-size: 350% 350%;
@@ -641,6 +651,7 @@
         .mindly-brand {
             background: linear-gradient(90deg, #000000, #1034a6, #000080, #191970, #4169e1, #000000);
             background-size: 350% 350%;
+            background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
             animation: brandShift 9s ease-in-out infinite;
@@ -668,6 +679,7 @@
         .nav-link.active-link {
             background: linear-gradient(90deg, #000000, #1034a6, #000080, #191970, #4169e1, #000000);
             background-size: 300% 300%;
+            background-clip: text;
             -webkit-background-clip: text;
             color: transparent !important;
             font-weight: 700;
@@ -686,7 +698,7 @@
     </style>
     @stack('styles')
 </head>
-<body>
+<body data-flash-status="{{ session('status') }}">
     <nav class="navbar navbar-expand-lg nav-blur sticky-top py-3">
         <div class="container-lg">
             <a class="navbar-brand fw-bold" href="{{ route('landing') }}">
@@ -744,18 +756,18 @@
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
         AOS.init({ once: true, duration: 700 });
-
-        @if (session('status'))
+        const flashStatus = document.body.dataset.flashStatus;
+        if (flashStatus) {
             Swal.fire({
                 toast: true,
                 position: 'top-end',
                 icon: 'success',
-                title: @json(session('status')),
+                title: flashStatus,
                 showConfirmButton: false,
                 timer: 3000,
                 timerProgressBar: true,
             });
-        @endif
+        }
     </script>
     @stack('scripts')
 </body>

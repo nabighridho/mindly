@@ -40,7 +40,7 @@
 
     <div class="glass-card p-3 journal-table">
         <div class="journal-grid">
-            @forelse($journals as $journal)
+            @forelse($journeys as $journal)
                 <div class="journal-card">
                     <div class="d-flex justify-content-between align-items-center mb-2">
                         <span class="badge text-bg-light text-uppercase">{{ $journal->journal_date->format('d M Y') }}</span>
@@ -65,11 +65,11 @@
                     </div>
                 </div>
             @empty
-                <div class="journal-card text-center text-body-secondary">Belum ada jurnal.</div>
+                <div class="journal-card text-center text-body-secondary">Belum ada journey.</div>
             @endforelse
         </div>
         <div class="mt-3">
-            {{ $journals->links('pagination::bootstrap-5') }}
+            {{ $journeys->links('pagination::bootstrap-5') }}
         </div>
     </div>
 @endsection

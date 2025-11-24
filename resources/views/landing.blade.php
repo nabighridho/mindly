@@ -84,7 +84,7 @@
                         <div class="fw-semibold text-primary">Mood Journey</div>
                         <i class="bi bi-graph-up fs-4 text-primary"></i>
                     </div>
-                    <p class="text-body-secondary">Grafik tren mingguan/bulanan dengan keterkaitan jurnal. Soroti pola dan pemicu berulang.</p>
+                    <p class="text-body-secondary">Grafik tren mingguan/bulanan dengan keterkaitan journey. Soroti pola dan pemicu berulang.</p>
                     <span class="badge rounded-pill text-bg-info">Insight visual</span>
                 </div>
             </div>
@@ -109,7 +109,7 @@
                 <ul class="list-unstyled mt-3">
                     <li class="d-flex gap-3 align-items-start mb-2">
                         <i class="bi bi-check-circle-fill text-primary"></i>
-                        <span>Refleksi diri berbasis data, bukan sekadar jurnal teks.</span>
+                        <span>Refleksi diri berbasis data, bukan sekadar catatan teks.</span>
                     </li>
                     <li class="d-flex gap-3 align-items-start mb-2">
                         <i class="bi bi-check-circle-fill text-primary"></i>
@@ -127,7 +127,7 @@
                     <h5 class="fw-bold mb-3">Alur Pengguna Baru</h5>
                     <ol class="ps-3">
                         <li class="mb-2">Daftar & login, lalu lakukan check-in Daily Mood pertama.</li>
-                        <li class="mb-2">Tuliskan jurnal jika mood netral/negatif.</li>
+                        <li class="mb-2">Tuliskan journey jika mood netral/negatif.</li>
                         <li class="mb-2">Lihat ringkasan tren mingguan pada Mood Journey.</li>
                         <li class="mb-2">Ambil Self-Check berkala dengan rekomendasi edukasi.</li>
                         <li class="mb-0">Pantau pola dan kelola kebiasaan self-care.</li>

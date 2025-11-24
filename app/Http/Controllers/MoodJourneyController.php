@@ -12,28 +12,28 @@ class MoodJourneyController extends Controller
     {
         $user = $request->user();
 
-        $journalsQuery = $user->moodJourneys()
+        $journeysQuery = $user->moodJourneys()
             ->with('dailyMood')
             ->latest('journal_date');
 
         if ($request->filled('from_date')) {
-            $journalsQuery->whereDate('journal_date', '>=', $request->date('from_date'));
+            $journeysQuery->whereDate('journal_date', '>=', $request->date('from_date'));
         }
 
         if ($request->filled('to_date')) {
-            $journalsQuery->whereDate('journal_date', '<=', $request->date('to_date'));
+            $journeysQuery->whereDate('journal_date', '<=', $request->date('to_date'));
         }
 
         if ($request->filled('mood_level')) {
-            $journalsQuery->whereHas('dailyMood', function ($query) use ($request) {
+            $journeysQuery->whereHas('dailyMood', function ($query) use ($request) {
                 $query->where('mood_level', $request->integer('mood_level'));
             });
         }
 
-        $journals = $journalsQuery->paginate(10)->withQueryString();
+        $journeys = $journeysQuery->paginate(10)->withQueryString();
         $moods = $user->dailyMoods()->orderByDesc('log_date')->limit(30)->get();
 
-        return view('journeys.index', compact('journals', 'moods'));
+        return view('journeys.index', compact('journeys', 'moods'));
     }
 
     public function create(Request $request)

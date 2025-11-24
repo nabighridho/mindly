@@ -7,7 +7,7 @@
                 <div>
                     <div class="admin-badge mb-2">ADMIN</div>
                     <h4 class="fw-bold mt-1 text-white">Ringkasan Sistem</h4>
-                    <p class="text-light text-opacity-75 mb-0">Data agregat. Konten jurnal tidak dapat diakses langsung.</p>
+                    <p class="text-light text-opacity-75 mb-0">Data agregat. Konten journey tidak dapat diakses langsung.</p>
                 </div>
                 <div class="d-flex gap-2">
                     <a href="{{ route('admin.users.index') }}" class="btn btn-sm btn-gradient-light">Kelola Pengguna</a>
@@ -45,11 +45,14 @@
             <div class="col-lg-6">
                 <div class="admin-card p-3 h-100">
                     <h6 class="fw-bold mb-3">Distribusi Mood</h6>
-                    @foreach($moodDistribution as $item)
-                        <div class="d-flex align-items-center mb-2">
-                            <div class="me-2">Level {{ $item->mood_level }}</div>
-                            <div class="progress flex-grow-1" style="height: 8px;">
-                                <div class="progress-bar" style="width: {{ $totalDailyMoods > 0 ? ($item->total / $totalDailyMoods) * 100 : 0 }}%; background: linear-gradient(120deg, #0f3c8c, #2f6bce);"></div>
+                        @foreach($moodDistribution as $item)
+                            @php
+                                $barWidth = $totalDailyMoods > 0 ? ($item->total / $totalDailyMoods) * 100 : 0;
+                            @endphp
+                            <div class="d-flex align-items-center mb-2">
+                                <div class="me-2">Level {{ $item->mood_level }}</div>
+                                <div class="progress flex-grow-1" style="height: 8px;">
+                                <div class="progress-bar admin-progress" style="--bar-width: {{ $barWidth }}%;"></div>
                             </div>
                             <span class="ms-2 small">{{ $item->total }}</span>
                         </div>
@@ -60,10 +63,14 @@
                 <div class="admin-card p-3 h-100">
                     <h6 class="fw-bold mb-3">Self-Check per Kategori</h6>
                     @foreach($selfCheckByCategory as $item)
-                        <div class="d-flex align-items-center mb-2">
-                            <div class="me-2">{{ $item->category }}</div>
-                            <div class="progress flex-grow-1" style="height: 8px;">
-                                <div class="progress-bar bg-dark" style="width: {{ $selfCheckByCategory->sum('total') > 0 ? ($item->total / $selfCheckByCategory->sum('total')) * 100 : 0 }}%;"></div>
+                        @php
+                            $catTotal = $selfCheckByCategory->sum('total');
+                            $catWidth = $catTotal > 0 ? ($item->total / $catTotal) * 100 : 0;
+                        @endphp
+                            <div class="d-flex align-items-center mb-2">
+                                <div class="me-2">{{ $item->category }}</div>
+                                <div class="progress flex-grow-1" style="height: 8px;">
+                                <div class="progress-bar admin-progress-dark bg-dark" style="--bar-width: {{ $catWidth }}%;"></div>
                             </div>
                             <span class="ms-2 small">{{ $item->total }}</span>
                         </div>

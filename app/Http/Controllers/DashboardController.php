@@ -16,7 +16,7 @@ class DashboardController extends Controller
             ->orderBy('log_date')
             ->get();
 
-        $recentJournals = $user->moodJourneys()
+        $recentJourneys = $user->moodJourneys()
             ->latest('journal_date')
             ->limit(3)
             ->get();
@@ -27,7 +27,7 @@ class DashboardController extends Controller
             'user' => $user,
             'todayMood' => $todayMood,
             'weeklyMoods' => $weeklyMoods,
-            'recentJournals' => $recentJournals,
+            'recentJourneys' => $recentJourneys,
             'latestSelfCheck' => $latestSelfCheck,
         ]);
     }

@@ -12,7 +12,7 @@
                     <div>
                         <span class="section-title text-light">Dashboard</span>
                         <h4 class="fw-bold mt-1 mb-1">Halo, {{ $user->name }}!</h4>
-                        <p class="mb-0 text-light text-opacity-75">Pantau mood, jurnal, dan hasil self-check secara cepat.</p>
+                        <p class="mb-0 text-light text-opacity-75">Pantau mood, journey, dan hasil self-check secara cepat.</p>
                     </div>
                     <div class="d-flex gap-2">
                         <a href="{{ route('daily-mood.create') }}" class="btn btn-gradient-light">Catat Mood</a>
@@ -81,7 +81,7 @@
                     </div>
                     <a href="{{ route('journeys.index') }}" class="btn btn-sm btn-gradient-light">Lihat Semua</a>
                 </div>
-                @forelse($recentJournals as $journal)
+                @forelse($recentJourneys as $journal)
                     <div class="item mb-2">
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="fw-semibold">{{ $journal->title ?? 'Tanpa Judul' }}</div>
@@ -94,7 +94,7 @@
                         </div>
                     </div>
                 @empty
-                    <p class="text-body-secondary mb-0">Belum ada jurnal. Mulai dengan menulis refleksi singkat.</p>
+                    <p class="text-body-secondary mb-0">Belum ada journey. Mulai dengan menulis refleksi singkat.</p>
                 @endforelse
             </div>
         </div>
