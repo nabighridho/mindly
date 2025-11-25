@@ -9,9 +9,9 @@
                         <h4 class="fw-bold mb-1">Edit Mood Journey</h4>
                         <small class="text-body-secondary">Perbarui catatan harian dan simpan perubahanmu.</small>
                     </div>
-                    <span class="badge text-bg-light">{{ $journal->journal_date->format('d M Y') }}</span>
+                    <span class="badge text-bg-light">{{ optional($journal->journal_date)->format('d M Y') }}</span>
                 </div>
-                <form method="POST" action="{{ route('journeys.update', $journal) }}">
+                <form method="POST" action='{{ url("/journeys/$journal->id") }}'>
                     @csrf
                     @method('PUT')
                     <div class="mb-3">
@@ -21,7 +21,7 @@
                     <div class="row g-3">
                         <div class="col-md-6">
                             <label class="form-label">Tanggal Jurnal</label>
-                            <input type="date" name="journal_date" value="{{ old('journal_date', $journal->journal_date->toDateString()) }}" class="form-control" required>
+                            <input type="date" name="journal_date" value="{{ old('journal_date', optional($journal->journal_date)->toDateString()) }}" class="form-control" required>
                         </div>
                         <div class="col-md-6">
                             <label class="form-label">Tautkan ke Daily Mood (opsional)</label>

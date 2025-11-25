@@ -64,16 +64,17 @@ class MoodJourneyController extends Controller
         return redirect()->route('journeys.index')->with('status', 'Catatan berhasil disimpan.');
     }
 
-    public function edit(MoodJourney $journal, Request $request)
+    public function edit($id, Request $request)
     {
+        $journal = MoodJourney::all()->find($id);
         $this->ensureOwner($journal, $request);
         $moods = $request->user()->dailyMoods()->orderByDesc('log_date')->limit(30)->get();
-
         return view('journeys.edit', compact('journal', 'moods'));
     }
 
-    public function update(MoodJourney $journal, Request $request)
+    public function update($id, Request $request)
     {
+        $journal = MoodJourney::all()->find($id);
         $this->ensureOwner($journal, $request);
         $user = $request->user();
 
@@ -94,8 +95,9 @@ class MoodJourneyController extends Controller
         return redirect()->route('journeys.index')->with('status', 'Catatan diperbarui.');
     }
 
-    public function destroy(MoodJourney $journal, Request $request)
+    public function destroy($id, Request $request)
     {
+        $journal = MoodJourney::all()->find($id);
         $this->ensureOwner($journal, $request);
 
         $journal->delete();
@@ -107,7 +109,12 @@ class MoodJourneyController extends Controller
 
     protected function ensureOwner(MoodJourney $journal, Request $request): void
     {
-        if ($journal->user_id !== $request->user()->id) {
+        $user = $request->user();
+        if ($user->role === 'admin') {
+            return;
+        }
+
+        if ($journal->user_id !== $user->id) {
             abort(403);
         }
     }
