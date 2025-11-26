@@ -28,6 +28,7 @@ class AuthController extends Controller
             'email' => $data['email'],
             'password' => $data['password'],
             'role' => 'user',
+            'email_verified_at' => now(),
         ]);
 
         $user->preference()->create();
