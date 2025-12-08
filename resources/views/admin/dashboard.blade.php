@@ -103,7 +103,7 @@
                             <li class="border-bottom py-2">
                                 <div class="fw-semibold">{{ $log->activity_type }}</div>
                                 <small class="text-body-secondary">{{ $log->description }}</small><br>
-                                <small class="text-body-secondary">{{ $log->created_at->format('d M H:i') }}</small>
+                                <small class="text-body-secondary">{{ $log->created_at->timezone('Asia/Jakarta')->format('d M H:i') }}</small>
                             </li>
                         @empty
                             <li class="text-body-secondary">Belum ada aktivitas.</li>

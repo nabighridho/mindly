@@ -31,8 +31,6 @@ class AuthController extends Controller
             'email_verified_at' => now(),
         ]);
 
-        $user->preference()->create();
-
         Auth::login($user);
         $request->session()->regenerate();
 

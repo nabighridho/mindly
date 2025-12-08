@@ -1,6 +1,5 @@
 ```mermaid
 erDiagram
-    USER ||--|| USER_PREFERENCE : has_one
     USER ||--o{ DAILY_MOOD : has_many
     USER ||--o{ MOOD_JOURNEY : has_many
     USER ||--o{ SELFCHECK_RESULT : has_many
@@ -53,16 +52,6 @@ erDiagram
         timestamp email_verified_at
         string password
         remember_token
-        datetime created_at
-        datetime updated_at
-    }
-
-    USER_PREFERENCE {
-        bigint id PK
-        bigint user_id FK
-        boolean receive_email_reminder
-        boolean allow_data_for_research
-        time default_reminder_time
         datetime created_at
         datetime updated_at
     }

@@ -4,7 +4,7 @@
     <div class="row justify-content-center py-4">
         <div class="col-lg-8">
             <div class="glass-card p-4 mb-3">
-                <h4 class="fw-bold mb-3">Profil & Preferensi</h4>
+                <h4 class="fw-bold mb-3">Profil</h4>
                 <form method="POST" action="{{ route('profile.update') }}">
                     @csrf
                     @method('PUT')

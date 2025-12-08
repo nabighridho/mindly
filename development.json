@@ -589,22 +589,6 @@
           "INDEX idx_user (user_id)",
           "INDEX idx_type (activity_type)"
         ]
-      },
-      "user_preferences": {
-        "description": "Opsional – menyimpan preferensi tambahan pengguna.",
-        "optional": true,
-        "columns": [
-          { "name": "id", "type": "BIGINT", "attributes": ["PK", "AUTO_INCREMENT"] },
-          { "name": "user_id", "type": "BIGINT", "attributes": ["FK users.id"] },
-          { "name": "receive_email_reminder", "type": "BOOLEAN", "default": false },
-          { "name": "allow_data_for_research", "type": "BOOLEAN", "default": false },
-          { "name": "default_reminder_time", "type": "TIME", "attributes": ["NULLABLE"] },
-          { "name": "created_at", "type": "TIMESTAMP", "attributes": ["NOT_NULL"] },
-          { "name": "updated_at", "type": "TIMESTAMP", "attributes": ["NOT_NULL"] }
-        ],
-        "indexes": [
-          "UNIQUE KEY unique_user (user_id)"
-        ]
       }
     }
   },
@@ -615,8 +599,7 @@
       "daily_moods",
       "mood_journals",
       "selfcheck_results",
-      "activity_logs",
-      "user_preferences (opsional)"
+      "activity_logs"
     ],
     "relationships": [
       {
@@ -648,12 +631,6 @@
         "to": "activity_logs",
         "type": "1-to-many",
         "description": "Log aktivitas disimpan per pengguna (atau null untuk aktivitas sistem)."
-      },
-      {
-        "from": "users",
-        "to": "user_preferences",
-        "type": "1-to-1",
-        "description": "Setiap user dapat memiliki satu record preferensi."
       }
     ],
     "authorization": {
@@ -788,8 +765,7 @@
       "goals": "Membuat pengguna merasa diarahkan dan dipersonalisasi sejak awal.",
       "steps": [
         "Tanyakan tujuan utama user (mengelola stres kerja, tidur lebih baik, dsb.).",
-        "Tanyakan preferensi frekuensi pengingat (harian/mingguan/tidak sama sekali).",
-        "Simpan ke user_preferences dan tampilkan di dashboard sebagai fokus utama."
+        "Tanyakan preferensi frekuensi pengingat (harian/mingguan/tidak sama sekali)."
       ]
     },
     "habit_and_reminders": {

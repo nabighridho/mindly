@@ -11,15 +11,13 @@ class ProfileController extends Controller
     public function edit(Request $request)
     {
         $user = $request->user();
-        $preference = $user->preference()->firstOrCreate([]);
 
-        return view('profile.edit', compact('user', 'preference'));
+        return view('profile.edit', compact('user'));
     }
 
     public function update(Request $request)
     {
         $user = $request->user();
-        $preference = $user->preference()->firstOrCreate([]);
 
         $data = $request->validate([
             'name' => ['required', 'string', 'max:255'],
@@ -31,9 +29,7 @@ class ProfileController extends Controller
             'email' => $data['email'],
         ]);
 
-        $preference->update([]);
-
-        $this->logActivity('profile_update', 'Memperbarui profil dan preferensi.');
+        $this->logActivity('profile_update', 'Memperbarui profil.');
 
         return back()->with('status', 'Profil diperbarui.');
     }
